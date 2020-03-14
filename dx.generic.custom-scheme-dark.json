@@ -1,0 +1,17 @@
+{
+    "items": [
+        {
+            "key": "@base-border-radius",
+            "value": "0px"
+        },
+        {
+            "key": "@base-accent",
+            "value": "rgba(16, 74, 125, 1)"
+        }
+    ],
+    "baseTheme": "generic.dark",
+    "outputColorScheme": "custom-scheme-dark",
+    "makeSwatch": false,
+    "version": "19.2.6",
+    "widgets": []
+}

@@ -1,3 +1,6 @@
+import { Menu } from "./Menu";
+import DataSource from "devextreme/data/data_source";
+
 export class Usuario {
   private _nome: string;
   private _foto: string;
@@ -21,6 +24,45 @@ export class Usuario {
   constructor(nome: string, foto: string) {
     this._nome = nome;
     this._foto = foto;
+  }
+
+  obterHistorico() {
+    return [
+      {
+        key: "Recentes",
+        items: [
+          Menu.grupoMacro,
+          Menu.rota,
+          Menu.embarqueEmEquipamento,
+          Menu.veiculoTipo,
+          Menu.veiculo
+        ]
+      },
+      {
+        key: "Mais acessados",
+        items: [
+          Menu.mapaMonitoramento,
+          Menu.pessoa,
+          Menu.regraServidorEmHierarquiaOrganizacional,
+          Menu.embarqueEmEquipamento,
+          Menu.historicoVeiculo
+        ]
+      },
+      {
+        key: "Favoritos",
+        items: [Menu.consultaInstalacao]
+      }
+    ];
+  }
+
+  obterMenu() {
+    // TODO fazer implementação de permissões
+    const menu = Menu.obterLista();
+    return new DataSource({
+      key: "nome",
+      group: "categoria",
+      store: menu
+    });
   }
 
   static ativo: Usuario = new Usuario(

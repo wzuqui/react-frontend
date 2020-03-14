@@ -4,7 +4,7 @@ export interface IFotoProps {
   src?: string;
 }
 
-export const Foto = styled.div<IFotoProps>`
+export default styled.div<IFotoProps>`
   background-image: url(${props => props.src});
   width: 25px;
   height: 25px;
