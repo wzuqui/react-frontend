@@ -4,27 +4,25 @@ import * as React from 'react';
 import { MenuItem } from '../../services/MenuItem';
 import { Usuario } from '../../services/Usuario';
 import { Logo } from './Logo';
-import Styles, {
-  Categoria,
-  CategoriaTitulo,
-  Centralizar,
-  Descricao,
-  GridContainer,
-  Icone,
-  Nome,
-  TileItem,
-  TileItemBotoes,
-  TileIcone,
-  TileItemNome
-} from './styles';
+import Styles, { Categoria, CategoriaTitulo, Centralizar, Descricao, GridContainer, Icone, Nome, TileItem, TileItemBotoes, TileIcone, TileItemNome } from './styles';
 
 interface INovaAbaProps {}
 
 class NovaAba extends React.Component<INovaAbaProps> {
   private _selectBoxInput?: SelectBox | null;
 
+  constructor(props: INovaAbaProps) {
+    super(props);
+    this.onValueChanged = this.onValueChanged.bind(this);
+  }
+
   public componentDidMount() {
     this._selectBoxInput?.instance.focus();
+  }
+
+  private onValueChanged(e: any) {
+    const item: MenuItem = e.value;
+    console.log(item);
   }
 
   public render() {
@@ -38,6 +36,7 @@ class NovaAba extends React.Component<INovaAbaProps> {
             grouped={true}
             displayExpr="nome"
             searchEnabled={true}
+            onValueChanged={this.onValueChanged}
             itemRender={function(data: MenuItem) {
               return (
                 <GridContainer>
