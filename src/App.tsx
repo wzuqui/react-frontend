@@ -1,17 +1,17 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React, { useState } from 'react';
+import themes from 'devextreme/ui/themes';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Cabecalho from './components/Cabecalho';
 import NovaAba from './pages/NovaAba';
 import { GlobalStyles } from './styles/global';
-
-import themes from 'devextreme/ui/themes';
-import light from './styles/themes/light';
 import dark from './styles/themes/dark';
+import light from './styles/themes/light';
+import usePersistedState from './hooks/usePersistedState';
 
 function App() {
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = usePersistedState('theme', light);
 
   const toggleTheme = () => {
     setTheme(theme.titulo === 'light' ? dark : light);
