@@ -8,7 +8,7 @@ module.exports = {
     { value: "perf", name: "perf: Uma alteração de código que melhora o desempenho" },
     { value: "test", name: "test: Adicionando testes ausentes" },
     { value: "chore", name: "chore: Alterações no processo de construção ou ferramentas auxiliares e bibliotecas como geração de documentação" },
-    { value: "revert", name: "revert:   Revert to a commit" },
+    { value: "revert", name: "revert: Reverter para uma confirmação" },
     { value: "WIP", name: "WIP: Trabalho em progresso" }
   ],
 
