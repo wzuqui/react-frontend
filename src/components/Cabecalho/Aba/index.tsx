@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
+import { useHistory } from "react-router-dom";
 
 import Styles, { Titulo } from './styles';
 
@@ -14,10 +15,18 @@ interface AbaProps {
 
 const Aba: React.FC<AbaProps> = ({ titulo, icone }) => {
   const theme = useContext(ThemeContext);
+  const history = useHistory();
 
   const className = mergeStyles({
     padding: '0px 8px'
   });
+
+  const fecharHandler = () => {
+    history.push('/');
+  }
+  const novaAbahandler = () => {
+    window.open(window.location.origin);
+  }
 
   return (
     <>
@@ -25,9 +34,9 @@ const Aba: React.FC<AbaProps> = ({ titulo, icone }) => {
         <Titulo>
           <Icon iconName={icone} className={className + ' ' + icone} /> {titulo}
         </Titulo>
-        <Botao iconProps={{ iconName: 'Cancel' }} />
+        <Botao iconProps={{ iconName: 'Cancel' }} onClick={fecharHandler}  />
       </Styles>
-      <Botao cor={theme.cores.TextoCabecalho} iconProps={{ iconName: 'Add' }} />
+      <Botao cor={theme.cores.TextoCabecalho} iconProps={{ iconName: 'Add' }} onClick={novaAbahandler} />
     </>
   );
 };

@@ -4,14 +4,27 @@ import * as React from 'react';
 import { MenuItem } from '../../services/MenuItem';
 import { Usuario } from '../../services/Usuario';
 import { Logo } from './Logo';
-import Styles, { Categoria, CategoriaTitulo, Centralizar, Descricao, GridContainer, Icone, Nome, TileItem, TileItemBotoes, TileIcone, TileItemNome } from './styles';
+import Styles, {
+  Categoria,
+  CategoriaTitulo,
+  Centralizar,
+  Descricao,
+  GridContainer,
+  Icone,
+  Nome,
+  TileItem,
+  TileItemBotoes,
+  TileIcone,
+  TileItemNome
+} from './styles';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 interface INovaAbaProps {}
 
-class NovaAba extends React.Component<INovaAbaProps> {
+class NovaAba extends React.Component<INovaAbaProps & RouteComponentProps> {
   private _selectBoxInput?: SelectBox | null;
 
-  constructor(props: INovaAbaProps) {
+  constructor(props: INovaAbaProps & RouteComponentProps) {
     super(props);
     this.onValueChanged = this.onValueChanged.bind(this);
   }
@@ -21,8 +34,8 @@ class NovaAba extends React.Component<INovaAbaProps> {
   }
 
   private onValueChanged(e: any) {
-    const item: MenuItem = e.value;
-    console.log('TODO', item);
+    const item: MenuItem = e.value || e.itemData;
+    this.props.history.push(`/${item.rota}`);
   }
 
   public render() {
@@ -34,7 +47,7 @@ class NovaAba extends React.Component<INovaAbaProps> {
             width="650px"
             placeholder=""
             grouped={true}
-            displayExpr="nome"
+            displayExpr={item => JSON.stringify(item)}
             searchEnabled={true}
             onValueChanged={this.onValueChanged}
             itemRender={function(data: MenuItem) {
@@ -65,6 +78,7 @@ class NovaAba extends React.Component<INovaAbaProps> {
                 height="auto"
                 itemMargin={10}
                 direction="vertical"
+                onItemClick={this.onValueChanged}
                 itemRender={(data: MenuItem) => {
                   return (
                     <TileItem>
@@ -86,4 +100,4 @@ class NovaAba extends React.Component<INovaAbaProps> {
   }
 }
 
-export default NovaAba;
+export default withRouter(NovaAba);

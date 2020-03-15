@@ -15,7 +15,7 @@ export class MenuItem {
   rota: string;
 
   get pasta(): string {
-    return toTitleCase(this.rota.replace('-',' '));
+    return toTitleCase(this.rota.replace('-',' ')).replace(' ', '');
   }
 
   constructor(

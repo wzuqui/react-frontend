@@ -14,19 +14,17 @@ import Styles, {
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 import { Menu } from '../../services/Menu';
 import { MenuItem } from '../../services/MenuItem';
+import { useLocation } from 'react-router-dom';
 
 interface ICabecalhoProps {
   toggleTheme(): void;
 }
 
 const Cabecalho: React.FC<ICabecalhoProps> = ({ toggleTheme }) => {
-  // todo workarround
-  const rotaAtiva = window.location.pathname.replace('/', '');
+  const rotaAtiva = useLocation().pathname.replace('/', '');
   const menuAtivo =
     Menu.obterLista().find(menu => menu.rota === rotaAtiva) ||
     new MenuItem('Nova guia', 'Nova guia', '', '', '');
-
-  console.log(menuAtivo);
 
   return (
     <Styles>
