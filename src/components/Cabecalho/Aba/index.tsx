@@ -1,24 +1,26 @@
-import * as React from 'react';
-import Styles, {
-  Icone,
-  StyledIconButton as IconButtonStyled,
-  Titulo
-} from './styles';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+
+import Styles, { Icone, Titulo } from './styles';
+
+import Botao from './Botao';
 
 interface AbaProps {
   titulo: string;
 }
 
 const Aba: React.FC<AbaProps> = ({ titulo }) => {
+  const theme = useContext(ThemeContext);
+
   return (
     <>
       <Styles>
         <Titulo>
           <Icone /> {titulo}
         </Titulo>
-        <IconButtonStyled iconProps={{ iconName: 'Cancel' }} />
+        <Botao iconProps={{ iconName: 'Cancel' }} />
       </Styles>
-      <IconButtonStyled iconProps={{ iconName: 'Add' }} />
+      <Botao cor={theme.cores.TextoCabecalho} iconProps={{ iconName: 'Add' }} />
     </>
   );
 };
