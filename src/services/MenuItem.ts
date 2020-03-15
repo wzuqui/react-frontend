@@ -1,9 +1,22 @@
+function toTitleCase(str: string) {
+  return str.replace(
+      /\w\S*/g,
+      function(txt: string) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+  );
+}
+
 export class MenuItem {
   nome: string;
   descricao: string;
   categoria: string;
   icone: string;
   rota: string;
+
+  get pasta(): string {
+    return toTitleCase(this.rota.replace('-',' '));
+  }
 
   constructor(
     _nome: string,
