@@ -3,15 +3,19 @@ export class MenuItem {
   descricao: string;
   categoria: string;
   icone: string;
+  rota: string;
+
   constructor(
     _nome: string,
     _descricao: string,
     _categoria: string,
-    _icone: string
+    _icone: string,
+    _rota: string
   ) {
     this.nome = _nome;
     this.descricao = _descricao;
     this.categoria = _categoria;
     this.icone = _icone;
+    this.rota = _rota;
   }
 }
