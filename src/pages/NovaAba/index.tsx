@@ -22,7 +22,7 @@ class NovaAba extends React.Component<INovaAbaProps> {
 
   private onValueChanged(e: any) {
     const item: MenuItem = e.value;
-    console.log(item);
+    console.log('TODO', item);
   }
 
   public render() {
