@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const Icone = styled.i`
-  padding: 0 8px;
-`;
-
 export const Titulo = styled.div`
   flex: 1 1 auto;
   font-size: 12px;
