@@ -1,5 +1,5 @@
-import { Menu } from "./Menu";
-import DataSource from "devextreme/data/data_source";
+import { Menu } from './Menu';
+import DataSource from 'devextreme/data/data_source';
 
 export class Usuario {
   private _nome: string;
@@ -29,7 +29,7 @@ export class Usuario {
   obterHistorico() {
     return [
       {
-        key: "Recentes",
+        key: 'Recentes',
         items: [
           Menu.grupoMacro,
           Menu.rota,
@@ -39,7 +39,7 @@ export class Usuario {
         ]
       },
       {
-        key: "Mais acessados",
+        key: 'Mais acessados',
         items: [
           Menu.mapaMonitoramento,
           Menu.pessoa,
@@ -49,7 +49,7 @@ export class Usuario {
         ]
       },
       {
-        key: "Favoritos",
+        key: 'Favoritos',
         items: [Menu.consultaInstalacao]
       }
     ];
@@ -59,14 +59,14 @@ export class Usuario {
     // TODO fazer implementação de permissões
     const menu = Menu.obterLista();
     return new DataSource({
-      key: "nome",
-      group: "categoria",
+      key: 'nome',
+      group: 'categoria',
       store: menu
     });
   }
 
   static ativo: Usuario = new Usuario(
-    "Willian Luis Zuqui",
-    "https://www.googleapis.com/download/storage/v1/b/ravex-169112.appspot.com/o/201804161117595930.jpeg?generation=1523877481189937&alt=media"
+    'Willian Luis Zuqui',
+    'https://www.googleapis.com/download/storage/v1/b/ravex-169112.appspot.com/o/201804161117595930.jpeg?generation=1523877481189937&alt=media'
   );
 }

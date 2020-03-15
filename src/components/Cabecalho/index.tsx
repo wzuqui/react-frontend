@@ -1,17 +1,17 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React from "react";
-import { Usuario } from "../../services/Usuario";
-import Aba from "./Aba";
-import Foto from "./Foto";
-import Logo from "./Logo";
+import React from 'react';
+import { Usuario } from '../../services/Usuario';
+import Aba from './Aba';
+import Foto from './Foto';
+import Logo from './Logo';
 import Styles, {
   Direita,
   Espaco,
   HierarquiaAtiva,
   Nome,
   Notificacoes
-} from "./styles";
-import { Toggle } from "office-ui-fabric-react/lib/Toggle";
+} from './styles';
+import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 
 interface ICabecalhoProps {
   toggleTheme(): void;

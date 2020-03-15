@@ -1,14 +1,14 @@
 export default {
-  titulo: "light",
+  titulo: 'light',
 
   cores: {
-    Destaque: "#2d3659",
-    Borda: "#202b54",
-    Secundaria: "#ba141a",
-    Terceira: "#777",
+    Destaque: '#2d3659',
+    Borda: '#202b54',
+    Secundaria: '#ba141a',
+    Terceira: '#777',
 
-    Fundo: "#fff",
-    Texto: "#333",
-    TextoCabecalho: "#f5f5f5"
+    Fundo: '#fff',
+    Texto: '#333',
+    TextoCabecalho: '#f5f5f5'
   }
 };

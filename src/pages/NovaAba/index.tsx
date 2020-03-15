@@ -1,9 +1,9 @@
-import { SelectBox, TileView } from "devextreme-react";
-import { Icon } from "office-ui-fabric-react/lib/Icon";
-import * as React from "react";
-import { MenuItem } from "../../services/MenuItem";
-import { Usuario } from "../../services/Usuario";
-import { Logo } from "./Logo";
+import { SelectBox, TileView } from 'devextreme-react';
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import * as React from 'react';
+import { MenuItem } from '../../services/MenuItem';
+import { Usuario } from '../../services/Usuario';
+import { Logo } from './Logo';
 import Styles, {
   Categoria,
   CategoriaTitulo,
@@ -16,7 +16,7 @@ import Styles, {
   TileItemBotoes,
   TileIcone,
   TileItemNome
-} from "./styles";
+} from './styles';
 
 interface INovaAbaProps {}
 

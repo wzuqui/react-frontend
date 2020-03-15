@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 import Styles, {
   Icone,
   StyledIconButton as IconButtonStyled,
   Titulo
-} from "./styles";
+} from './styles';
 
 interface AbaProps {
   titulo: string;
@@ -16,9 +16,9 @@ const Aba: React.FC<AbaProps> = ({ titulo }) => {
         <Titulo>
           <Icone /> {titulo}
         </Titulo>
-        <IconButtonStyled iconProps={{ iconName: "Cancel" }} />
+        <IconButtonStyled iconProps={{ iconName: 'Cancel' }} />
       </Styles>
-      <IconButtonStyled iconProps={{ iconName: "Add" }} />
+      <IconButtonStyled iconProps={{ iconName: 'Add' }} />
     </>
   );
 };

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { IconButton } from "office-ui-fabric-react/lib/Button";
+import styled from 'styled-components';
+import { IconButton } from 'office-ui-fabric-react/lib/Button';
 
 export const Icone = styled.i`
   padding: 0 8px;

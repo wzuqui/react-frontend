@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Centralizar = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 40px;
   grid-template-rows: 50% 50%;
-  grid-template-areas: "icone nome" "icone descricao";
+  grid-template-areas: 'icone nome' 'icone descricao';
 `;
 
 export const Icone = styled.div`
