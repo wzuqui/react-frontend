@@ -12,16 +12,26 @@ import Styles, {
   Notificacoes
 } from './styles';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
+import { Menu } from '../../services/Menu';
+import { MenuItem } from '../../services/MenuItem';
 
 interface ICabecalhoProps {
   toggleTheme(): void;
 }
 
 const Cabecalho: React.FC<ICabecalhoProps> = ({ toggleTheme }) => {
+  // todo workarround
+  const rotaAtiva = window.location.pathname.replace('/', '');
+  const menuAtivo =
+    Menu.obterLista().find(menu => menu.rota === rotaAtiva) ||
+    new MenuItem('Nova guia', 'Nova guia', '', '', '');
+
+  console.log(menuAtivo);
+
   return (
     <Styles>
       <Logo src="http://sistema.ravex.com.br/assets/images/logo-no-text-prod.svg" />
-      <Aba titulo="Nova guia" />
+      <Aba titulo={menuAtivo.nome} icone={menuAtivo.icone} />
       <Espaco />
       <Direita>
         <HierarquiaAtiva>
