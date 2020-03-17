@@ -51,4 +51,7 @@ export const GlobalStyles = createGlobalStyle`
   .dx-loadpanel-content {
     background-color: ${props => props.theme.cores.white};
   }
+  .dx-popup-bottom.dx-toolbar {
+    padding: 5px;
+  }
 `;
