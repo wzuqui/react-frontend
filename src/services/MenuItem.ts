@@ -18,6 +18,16 @@ export class MenuItem {
     return toTitleCase(this.rota.replace('-',' ')).replace(' ', '');
   }
 
+  get pesquisa(): string {
+    const removeAcentos = function(texto: string) {
+      return texto
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+    };
+    return removeAcentos(JSON.stringify(this));
+  }
+
   constructor(
     _nome: string,
     _descricao: string,

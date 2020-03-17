@@ -1,13 +1,16 @@
 import 'reflect-metadata';
-
-import { DisplayName } from '../../decorators/DisplayName';
+import Imagem from '../../components/Imagem';
+import { Etiqueta, Componente, Tipo, Alinhamento } from './decorators';
 import { Entity } from './Entity';
 
 export class Icone extends Entity {
-  @DisplayName('None')
+  @Etiqueta('None')
+  @Tipo('string')
   nome!: string;
 
-  @DisplayName('Imagem')
-  @Template()
+  @Etiqueta('Imagem')
+  @Componente(Imagem)
+  @Tipo('string')
+  @Alinhamento('center')
   imagem!: string;
 }

@@ -30,6 +30,7 @@ class NovaAba extends React.Component<INovaAbaProps & RouteComponentProps> {
   }
 
   public componentDidMount() {
+    this._selectBoxInput?.instance.reset();
     this._selectBoxInput?.instance.focus();
   }
 
@@ -47,8 +48,9 @@ class NovaAba extends React.Component<INovaAbaProps & RouteComponentProps> {
             width="650px"
             placeholder=""
             grouped={true}
-            displayExpr={item => JSON.stringify(item)}
             searchEnabled={true}
+            displayExpr={'nome'}
+            searchExpr={['nome', 'descricao', 'categoria', 'icone', 'rota']}
             onValueChanged={this.onValueChanged}
             itemRender={function(data: MenuItem) {
               return (

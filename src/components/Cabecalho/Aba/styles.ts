@@ -10,6 +10,6 @@ export default styled.div`
   height: 30px;
   display: flex;
   min-width: 58px;
-  color: ${props => props.theme.cores.Texto};
-  background-color: ${props => props.theme.cores.Fundo};
+  color: ${props => props.theme.cores.neutralPrimary};
+  background-color: ${props => props.theme.cores.cabecalho.aba};
 `;

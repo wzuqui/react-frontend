@@ -1,65 +1,68 @@
-import { DisplayName } from '../../decorators/DisplayName';
-import { Format } from '../../decorators/Format';
-import { Ordem } from '../../decorators/Ordem';
-
-import { GetDisplayNames } from '../../decorators/DisplayName';
-import { GetFormats } from '../../decorators/Format';
-import { GetOrdems } from '../../decorators/Ordem';
+import {
+  Etiqueta,
+  Etiquetas,
+  Formatacao,
+  Formatacoes,
+  Ordem,
+  Ordens,
+  Componentes,
+  Tipo,
+  Tipos,
+  Alinhamento,
+  Alinhamentos
+} from './decorators';
 
 interface IColuna {
   ordem: number;
   etiqueta: string;
   propriedade: string;
   formatacao?: string | undefined;
+  componente?: React.ComponentType<any> | undefined;
+  tipo?: 'string' | 'number' | 'date' | 'boolean' | 'object' | 'datetime' | undefined;
+  alinhamento?: 'center' | 'left' | 'right' | undefined;
 }
 
 export class Entity {
   @Ordem(999)
-  @DisplayName('Identificação')
+  @Etiqueta('Identificação')
+  @Tipo('number')
   id!: number;
 
-  @DisplayName('Criado no servidor')
-  @Format('dd/MM/yyyy HH:mm:ss')
   @Ordem(997)
-  CriadoDatahora!: Date;
+  @Etiqueta('Criado no servidor')
+  @Formatacao('dd/MM/yyyy HH:mm:ss')
+  @Tipo('datetime')
+  @Alinhamento('right')
+  criadoDatahora!: Date;
 
-  @DisplayName('Modificado em')
-  @Format('dd/MM/yyyy HH:mm:ss')
   @Ordem(998)
-  ModificadoDatahora!: Date;
+  @Etiqueta('Modificado em')
+  @Formatacao('dd/MM/yyyy HH:mm:ss')
+  @Tipo('datetime')
+  @Alinhamento('right')
+  modificadoDatahora!: Date;
 
   public static obterColunas<T>(entity: new () => T): IColuna[] {
-    const colunas = GetDisplayNames(entity);
-    const formatos = Porra(
-      GetFormats(entity),
-      p => p.propriedade,
-      p => p.format
-    );
-    const ordens = Porra(
-      GetOrdems(entity),
-      p => p.propriedade,
-      p => p.ordem || 0
-    );
+    const etiquetas = Etiquetas(entity);
+    const formatacoes = Formatacoes(entity);
+    const ordens = Ordens(entity);
+    const componentes = Componentes(entity);
+    const tipos = Tipos(entity);
+    const alinhamentos = Alinhamentos(entity);
 
-    return colunas.map(coluna => {
-      return {
-        ordem: ordens[coluna.propriedade] || 0,
-        etiqueta: coluna.displayName,
-        propriedade: coluna.propriedade,
-        formatacao: formatos[coluna.propriedade]
-      } as IColuna;
-    }).sort((a, b) => a.ordem - b.ordem);
+    return Object.entries(etiquetas)
+      .map(item => {
+        const [propriedade, etiqueta] = item;
+        return {
+          etiqueta,
+          propriedade,
+          ordem: ordens[propriedade] || 0,
+          formatacao: formatacoes[propriedade],
+          componente: componentes[propriedade],
+          tipo: tipos[propriedade],
+          alinhamento: alinhamentos[propriedade]
+        } as IColuna;
+      })
+      .sort((a, b) => a.ordem - b.ordem);
   }
 }
-
-function Porra<T, TValue>(items: T[], grouper: (key: T) => any, mapper: (element: T) => TValue) {
-  const retorno = {};
-
-  for(const item of items) {
-    Object.assign(retorno, {
-      [grouper(item)]: mapper(item)
-    });
-  }
-  return retorno as { [key: string]: TValue };
-}
-

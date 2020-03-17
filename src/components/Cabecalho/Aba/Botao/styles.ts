@@ -8,8 +8,8 @@ export default styled(IconButton)`
   border-radius: 0px;
   background-color: transparent;
   &:hover {
-    background: ${props => props.theme.cores.Secundaria};
-    color: ${props => props.theme.cores.Fundo};
+    background: ${props => props.theme.cores.neutralPrimary};
+    color: ${props => props.theme.cores.white};
   }
   span > i {
     font-size: 12px;

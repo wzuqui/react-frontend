@@ -15,7 +15,7 @@ const Botao: React.FC<IBotaoProps> = ({ cor, iconProps, onClick }) => {
   const theme = useContext(ThemeContext);
 
   iconProps.className = mergeStyles({
-    color: cor || theme.cores.Destaque
+    color: cor || theme.cores.themePrimary
   });
 
   return <Styles color={cor} iconProps={iconProps} onClick={onClick}></Styles>;

@@ -6,7 +6,7 @@
         },
         {
             "key": "@base-accent",
-            "value": "rgba(16, 74, 125, 1)"
+            "value": "rgba(239, 128, 24, 1)"
         }
     ],
     "baseTheme": "generic.dark",

@@ -5,7 +5,7 @@ export const Espaco = styled.div`
 `;
 
 export const Direita = styled.div`
-  color: ${props => props.theme.cores.TextoCabecalho};
+  color: ${props => props.theme.cores.cabecalho.texto};
   font-size: 12px;
   text-align: right;
   white-space: nowrap;
@@ -25,9 +25,10 @@ export const HierarquiaAtiva = styled.div`
 `;
 
 export default styled.header`
+  width: 100%;
   display: flex;
   font-size: 22px;
   max-height: 30px;
   line-height: 30px;
-  background-color: ${props => props.theme.cores.Destaque};
+  background-color: ${props => props.theme.cores.cabecalho.fundo};
 `;

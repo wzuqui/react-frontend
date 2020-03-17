@@ -61,7 +61,8 @@ export class Usuario {
     return new DataSource({
       key: 'nome',
       group: 'categoria',
-      store: menu
+      store: menu,
+      searchExpr: ['nome', 'descricao', 'categoria', 'icone', 'rota']
     });
   }
 

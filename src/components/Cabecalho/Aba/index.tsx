@@ -36,7 +36,7 @@ const Aba: React.FC<AbaProps> = ({ titulo, icone }) => {
         </Titulo>
         <Botao iconProps={{ iconName: 'Cancel' }} onClick={fecharHandler}  />
       </Styles>
-      <Botao cor={theme.cores.TextoCabecalho} iconProps={{ iconName: 'Add' }} onClick={novaAbahandler} />
+      <Botao cor={theme.cores.neutralPrimary} iconProps={{ iconName: 'Add' }} onClick={novaAbahandler} />
     </>
   );
 };

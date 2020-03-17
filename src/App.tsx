@@ -1,4 +1,5 @@
 import themes from 'devextreme/ui/themes';
+import { loadTheme } from 'office-ui-fabric-react';
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
@@ -13,31 +14,36 @@ import light from './styles/themes/light';
 
 interface IAppProps {}
 
-const AppContainer = styled.div`
-  height: 100%;
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: auto;
-  grid-template-rows: 30px 100%;
-  grid-template-areas: 'cabecalho' 'pagina';
+const Cabecalhos = styled.div`
+  height: 30px;
 `;
 
-const AppCabecalho = styled.div`
-  grid-area: cabecalho;
+const Paginas = styled.div`
+  flex: 1;
+  display: flex;
+  min-height: 0px;
 `;
-const AppPagina = styled.div`
-  grid-area: pagina;
+
+const Pagina = styled.div`
+  width: 100%;
+  height: 100%;
+  > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const App: React.FC<IAppProps> = props => {
-  const [theme, setTheme] = usePersistedState('theme', light);
+  const [theme, setTheme] = usePersistedState('theme', light.titulo);
 
   const toggleTheme = () => {
-    setTheme(theme.titulo === 'light' ? dark : light);
+    setTheme(theme === 'light' ? dark.titulo : light.titulo);
   };
 
   if (theme) {
-    if (theme.titulo === 'light') {
+    if (theme === 'light') {
       themes.current('generic.light');
     } else {
       themes.current('generic.dark');
@@ -52,15 +58,25 @@ const App: React.FC<IAppProps> = props => {
     );
   };
 
+  const style = theme === 'light' ? light : dark;
+
+  loadTheme({
+    defaultFontStyle: {
+      fontSize: '12px'
+    },
+    
+    palette: style.cores
+  });
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={style}>
       <Router>
         <GlobalStyles />
-        <AppContainer>
-          <AppCabecalho>
-            <Cabecalho toggleTheme={toggleTheme} />
-          </AppCabecalho>
-          <AppPagina>
+        <Cabecalhos>
+          <Cabecalho toggleTheme={toggleTheme} />
+        </Cabecalhos>
+        <Paginas>
+          <Pagina>
             <Suspense fallback={<Carregando />}>
               <Switch>
                 <Route exact path="/">
@@ -76,8 +92,8 @@ const App: React.FC<IAppProps> = props => {
                 })}
               </Switch>
             </Suspense>
-          </AppPagina>
-        </AppContainer>
+          </Pagina>
+        </Paginas>
       </Router>
     </ThemeProvider>
   );

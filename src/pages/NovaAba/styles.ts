@@ -25,7 +25,7 @@ export const TileItem = styled.div`
   text-align: center;
   display: flex;
   flex-flow: column;
-  color: ${props => props.theme.cores.Texto};
+  color: ${props => props.theme.cores.neutralPrimary};
 `;
 
 export const TileItemNome = styled.div`
@@ -76,7 +76,7 @@ export const Nome = styled.div`
 `;
 
 export const Descricao = styled.div`
-  color: ${props => props.theme.cores.Terceira};
+  color: ${props => props.theme.cores.neutralPrimaryAlt};
   font-size: 10px;
   grid-area: descricao;
 `;
