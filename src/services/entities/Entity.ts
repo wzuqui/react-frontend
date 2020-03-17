@@ -9,7 +9,8 @@ import {
   Tipo,
   Tipos,
   Alinhamento,
-  Alinhamentos
+  Alinhamentos,
+  PermitirFiltros
 } from './decorators';
 
 interface IColuna {
@@ -20,6 +21,7 @@ interface IColuna {
   componente?: React.ComponentType<any> | undefined;
   tipo?: 'string' | 'number' | 'date' | 'boolean' | 'object' | 'datetime' | undefined;
   alinhamento?: 'center' | 'left' | 'right' | undefined;
+  permitirFiltro?: boolean;
 }
 
 export class Entity {
@@ -49,6 +51,7 @@ export class Entity {
     const componentes = Componentes(entity);
     const tipos = Tipos(entity);
     const alinhamentos = Alinhamentos(entity);
+    const permitirFiltros = PermitirFiltros(entity);
 
     return Object.entries(etiquetas)
       .map(item => {
@@ -60,7 +63,8 @@ export class Entity {
           formatacao: formatacoes[propriedade],
           componente: componentes[propriedade],
           tipo: tipos[propriedade],
-          alinhamento: alinhamentos[propriedade]
+          alinhamento: alinhamentos[propriedade],
+          permitirFiltro: permitirFiltros[propriedade]
         } as IColuna;
       })
       .sort((a, b) => a.ordem - b.ordem);

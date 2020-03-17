@@ -1,6 +1,13 @@
 import { pascalCase } from 'change-case';
 import { Template } from 'devextreme-react/core/template';
-import DataGrid, { Column, FilterPanel, HeaderFilter, Paging, Scrolling, Selection } from 'devextreme-react/data-grid';
+import DataGrid, {
+  Column,
+  FilterPanel,
+  HeaderFilter,
+  Paging,
+  Scrolling,
+  Selection
+} from 'devextreme-react/data-grid';
 import React from 'react';
 import styled from 'styled-components';
 import { Context } from '../../services/Contex';
@@ -38,11 +45,10 @@ const Icone: React.FC<IIconeProps> = props => {
             e.toolbarOptions?.items?.push(
               {
                 location: 'before',
-                template: 'busca'
-              },
-              {
-                location: 'before',
-                template: 'filtro'
+                widget: 'dxButton',
+                options: {
+                  icon: 'search'
+                }
               },
               {
                 location: 'before',
@@ -98,11 +104,9 @@ const Icone: React.FC<IIconeProps> = props => {
               dataField={pascalCase(coluna.propriedade)}
               dataType={coluna.tipo}
               alignment={coluna.alinhamento}
-                
+              allowFiltering={coluna.permitirFiltro}
             />
           ))}
-          <Template name="busca" render={() => <div>localizar</div>} />
-          <Template name="filtro" render={() => <div>filtro</div>} />
         </DataGrid>
       </Grid>
     </Styles>

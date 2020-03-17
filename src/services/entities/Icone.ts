@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import Imagem from '../../components/Imagem';
-import { Etiqueta, Componente, Tipo, Alinhamento } from './decorators';
+import { Etiqueta, Componente, Tipo, Alinhamento, PermitirFiltro } from './decorators';
 import { Entity } from './Entity';
 
 export class Icone extends Entity {
@@ -12,5 +12,6 @@ export class Icone extends Entity {
   @Componente(Imagem)
   @Tipo('string')
   @Alinhamento('center')
+  @PermitirFiltro(false)
   imagem!: string;
 }

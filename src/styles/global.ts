@@ -48,4 +48,7 @@ export const GlobalStyles = createGlobalStyle`
   .dx-datagrid.dx-datagrid-borders > .dx-datagrid-header-panel {
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
   }
+  .dx-loadpanel-content {
+    background-color: ${props => props.theme.cores.white};
+  }
 `;
