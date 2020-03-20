@@ -31,4 +31,5 @@ export default styled.header`
   max-height: 30px;
   line-height: 30px;
   background-color: ${props => props.theme.cores.cabecalho.fundo};
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
 `;

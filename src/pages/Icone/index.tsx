@@ -1,5 +1,4 @@
 import { pascalCase } from 'change-case';
-import { Template } from 'devextreme-react/core/template';
 import DataGrid, {
   Column,
   FilterPanel,
