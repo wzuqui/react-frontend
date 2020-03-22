@@ -227,6 +227,7 @@
     "dxFilterBuilder-filterOperationIsNotBlank": "Não está vazio",
     "dxFilterBuilder-filterOperationBetween": "Está entre",
     "dxFilterBuilder-filterOperationAnyOf": "Qualquer valor de",
-    "dxFilterBuilder-filterOperationNoneOf": "Nenhum valor de"
+    "dxFilterBuilder-filterOperationNoneOf": "Nenhum valor de",
+    "dxDataGrid-filterPanelCreateFilter": "Criar filtro"
   }
 }

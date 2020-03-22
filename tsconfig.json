@@ -18,5 +18,5 @@
     "emitDecoratorMetadata": true
   },
   "include": ["src"],
-  "files": ["src/styles/styled.d.ts"]
+  "files": ["src/styles/styled.d.ts", "./src/services/entities/Entidade.ts"]
 }

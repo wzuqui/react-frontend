@@ -1,7 +1,14 @@
 import 'reflect-metadata';
 import Imagem from '../../components/Imagem';
-import { Etiqueta, Componente, Tipo, Alinhamento, PermitirFiltro } from './decorators';
+import {
+  Etiqueta,
+  Componente,
+  Tipo,
+  Alinhamento,
+  PermitirFiltro
+} from './decorators';
 import { Entity } from './Entity';
+import { Entidade } from '.';
 
 export class Icone extends Entity {
   @Etiqueta('None')
@@ -14,4 +21,9 @@ export class Icone extends Entity {
   @Alinhamento('center')
   @PermitirFiltro(false)
   imagem!: string;
+
+  @Etiqueta('Criado por')
+  criadoPor!: number;
+
+  criadoPorEntidade!: Entidade;
 }

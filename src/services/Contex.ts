@@ -1,4 +1,5 @@
 import ODataContext from 'devextreme/data/odata/context';
+import ODataStore from 'devextreme/data/odata/store';
 import DataSource from 'devextreme/data/data_source';
 
 export enum keyTypes {
@@ -12,7 +13,7 @@ export enum keyTypes {
 }
 
 export class Context {
-  private _context: ODataContext & any;
+  private _context!: ODataContext;
 
   constructor() {
     this._context = new ODataContext({
@@ -20,6 +21,10 @@ export class Context {
       url: 'http://sistema.ravex.com.br:4000/odata1/',
       entities: {
         Icone: {
+          key: 'Id',
+          keyType: keyTypes.Int32
+        },
+        Entidade: {
           key: 'Id',
           keyType: keyTypes.Int32
         }
@@ -46,7 +51,30 @@ export class Context {
 
   get Icone() {
     return new DataSource({
-      store: this._context.Icone
+      store: this.dataStores.Icone
     });
+  }
+  get Entidade() {
+    return new DataSource({
+      store: this.dataStores.Entidade,
+      expand: ['Icone']
+    });
+  }
+
+  public get dataSources() {
+    return (this as unknown) as { [key: string]: DataSource };
+  }
+  public get dataStores() {
+    return (this._context as unknown) as { [key: string]: ODataStore };
+  }
+
+  public static CreateDataSource<T>(entity: { new (): T }): DataSource {
+    const context = new Context();
+    const dataSource = context.dataSources[entity.name];
+
+    if (dataSource === undefined) {
+      throw Error(`CreateDataSource ${entity.name} not found`);
+    }
+    return dataSource;
   }
 }

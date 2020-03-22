@@ -1382,6 +1382,13 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
+"@types/devextreme@^16.2.1":
+  version "16.2.1"
+  resolved "https://registry.npmjs.org/@types/devextreme/-/devextreme-16.2.1.tgz#e082dc1144c62a0fbfdba99ae34150d2942da9db"
+  integrity sha1-4ILcEUTGKg+/26ma40FQ0pQtqds=
+  dependencies:
+    devextreme "*"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -3835,7 +3842,7 @@ devextreme-react@^19.2.6:
   dependencies:
     prop-types "^15.6.1"
 
-devextreme@^19.2.6:
+devextreme@*, devextreme@^19.2.6:
   version "19.2.6"
   resolved "https://registry.yarnpkg.com/devextreme/-/devextreme-19.2.6.tgz#c8f4752d407dc05441da4e5772c5556db895f806"
   integrity sha512-kY/6W30FCd+XzCgCWQDTh+CEt/Izf50ZmUb9omPN+bXRfDHWz8Vm6lvCKxEHIq18BQiydW/s/Is2nQA4vkVCug==
@@ -10509,6 +10516,11 @@ tr46@^1.0.1:
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.3.9.tgz#717b8f220cc0bb7b44e40514c22b2e8bbc70d8b9"
   integrity sha1-cXuPIgzAu3tE5AUUwisui7xw2Lk=
+
+ts-object-path@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/ts-object-path/-/ts-object-path-0.1.2.tgz#7bbfa50a9a3970bcdd7e67470d00fb54ca22a6c7"
+  integrity sha512-YLX9omkbe2spFv7DDo1fC5BiRfMtu/LgYuGSXnuIT5EkhedzCEShT7YrsQV3pjjT7doY2RHfoxJrra16KJlf7w==
 
 ts-pnp@1.1.5, ts-pnp@^1.1.2:
   version "1.1.5"
