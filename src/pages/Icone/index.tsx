@@ -6,7 +6,7 @@ import DataGrid, {
   Scrolling,
   Selection
 } from 'devextreme-react/data-grid';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Imagem from '../../components/Imagem';
 import { DataGridOptions } from '../../services/DataGridOptions';

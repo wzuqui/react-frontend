@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+ @font-face {
+  font-family: 'ravex';
+  src: url('../font/ravex.eot?94163283');
+  src: url('../font/ravex.eot?94163283#iefix') format('embedded-opentype'),
+       url('../font/ravex.woff2?94163283') format('woff2'),
+       url('../font/ravex.woff?94163283') format('woff'),
+       url('../font/ravex.ttf?94163283') format('truetype'),
+       url('../font/ravex.svg?94163283#ravex') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'ravex';
+    src: url('../font/ravex.svg?94163283#ravex') format('svg');
+  }
+}
+*/
+ 
+ [class^="ravex-icon-"]:before, [class*=" ravex-icon-"]:before {
+  font-family: "ravex";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.ravex-icon-colaborador:before { content: '\e800'; } /* '' */
+.ravex-icon-usuario:before { content: '\e801'; } /* '' */
+.ravex-icon-motorista:before { content: '\e802'; } /* '' */
+.ravex-icon-resize-full:before { content: '\e803'; } /* '' */
+.ravex-icon-direcao:before { content: '\e804'; } /* '' */
+.ravex-icon-EMI:before { content: '\e805'; } /* '' */
+.ravex-icon-Car:before { content: '\e806'; } /* '' */
+.ravex-icon-MapPin:before { content: '\e807'; } /* '' */
+.ravex-icon-block:before { content: '\e808'; } /* '' */
+.ravex-icon-ponto-referencia:before { content: '\e809'; } /* '' */
+.ravex-icon-eye:before { content: '\e80a'; } /* '' */
+.ravex-icon-contrasenha:before { content: '\e80b'; } /* '' */
+.ravex-icon-atencao:before { content: '\e80c'; } /* '' */
+.ravex-icon-uniE7F4:before { content: '\e80d'; } /* '' */
+.ravex-icon-monitoramento-veiculo:before { content: '\e80e'; } /* '' */
+.ravex-icon-ok:before { content: '\e80f'; } /* '' */
+.ravex-icon-area:before { content: '\e81d'; } /* '' */
+.ravex-icon-X:before { content: '\e8bb'; } /* '' */
+.ravex-icon-Volume3:before { content: '\e995'; } /* '' */
+.ravex-icon-Department:before { content: '\eab6'; } /* '' */
+.ravex-icon-Industry:before { content: '\eab7'; } /* '' */
+.ravex-icon-key:before { content: '\eabc'; } /* '' */
+.ravex-icon-maximize:before { content: '\eabd'; } /* '' */
+.ravex-icon-restore:before { content: '\eabe'; } /* '' */
+.ravex-icon-Coffee:before { content: '\eaef'; } /* '' */
+.ravex-icon-Badge:before { content: '\ec1b'; } /* '' */
+.ravex-icon-fingerprint:before { content: '\ef22'; } /* '' */
+.ravex-icon-import:before { content: '\ef5f'; } /* '' */
+.ravex-icon-CRMReport:before { content: '\effe'; } /* '' */
+.ravex-icon-sem-comunicacao:before { content: '\f127'; } /* '' */
+.ravex-icon-grupoMacro:before { content: '\f1ec'; } /* '' */
+.ravex-icon-envio-comando:before { content: '\f29d'; } /* '' */
+.ravex-icon-VisioDiagram:before { content: '\f2a0'; } /* '' */
+.ravex-icon-FieldEmpty:before { content: '\f2c1'; } /* '' */
+.ravex-icon-termometro:before { content: '\f2cb'; } /* '' */
+.ravex-icon-window-maximize:before { content: '\f2d0'; } /* '' */
+.ravex-icon-window-restore:before { content: '\f2d2'; } /* '' */
+.ravex-icon-ConfigurationSolid:before { content: '\f334'; } /* '' */
+.ravex-icon-enviado:before { content: '\f635'; } /* '' */
+.ravex-icon-entregue:before { content: '\f636'; } /* '' */
+.ravex-icon-aguardando:before { content: '\f637'; } /* '' */
+.ravex-icon-arrow-down:before { content: '\f642'; } /* '' */
+.ravex-icon-FullWidthEdit:before { content: '\fded'; } /* '﷭' */
+.ravex-icon-MoreVertical:before { content: '󎻊'; } /* '\ceeca' */
